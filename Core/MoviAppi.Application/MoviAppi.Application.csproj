@@ -7,8 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Infastructure\MovieApiPersistence\MovieApiPersistence.csproj" />
     <ProjectReference Include="..\MovieApi.Domain\MovieApi.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\MediatorDesingPatern\Commands\" />
+    <Folder Include="Features\MediatorDesingPatern\Handlers\" />
+    <Folder Include="Features\MediatorDesingPatern\Result\" />
+    <Folder Include="Features\MediatorDesingPatern\Queries\" />
   </ItemGroup>
 
 </Project>

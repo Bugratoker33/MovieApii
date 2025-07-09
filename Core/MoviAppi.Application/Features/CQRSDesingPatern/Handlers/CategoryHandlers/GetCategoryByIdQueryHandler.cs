@@ -20,13 +20,14 @@ namespace MoviAppi.Application.Features.CQRSDesingPatern.Handlers.CategoryHandle
             _context = movieContext;
         }
 
-        public async Task<GetCategoryByIdQueryResult> Handler(GetCategoryByIdQuery query)
+        public async Task<GetCategoryByIdQueryResult> Handle(GetCategoryByIdQuery query)
         {
             var value = await _context.Categories.FindAsync(query.CategoryId);
             return new GetCategoryByIdQueryResult
             {
                 CategoryId = query.CategoryId,
-                CategoryName = query.CategoryName,
+                CategoryName = value.CategoryName,
+               
             };
         }
     }

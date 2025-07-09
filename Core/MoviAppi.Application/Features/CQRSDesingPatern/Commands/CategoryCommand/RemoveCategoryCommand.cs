@@ -9,6 +9,12 @@ namespace MoviAppi.Application.Features.CQRSDesingPatern.Commands.CategoryComman
     public class RemoveCategoryCommand
     {
         public int CategoryId { get; set; }
-       
+
+        public RemoveCategoryCommand(int categoryId)
+        {
+            CategoryId = categoryId;
+        }
     }
+
+
 }

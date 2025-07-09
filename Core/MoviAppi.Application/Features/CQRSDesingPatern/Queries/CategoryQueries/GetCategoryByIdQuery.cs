@@ -9,6 +9,10 @@ namespace MoviAppi.Application.Features.CQRSDesingPatern.Queries.CategoryQueries
     public class GetCategoryByIdQuery
     {
         public int CategoryId { get; set; }
-        public string CategoryName { get; set; }
+
+        public GetCategoryByIdQuery(int categoryId)
+        {
+            CategoryId = categoryId;
+        }
     }
 }

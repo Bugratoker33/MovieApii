@@ -17,7 +17,7 @@ namespace MoviAppi.Application.Features.CQRSDesingPatern.Handlers.CategoryHandle
             _context = movieContext;
         }
 
-        public async Task Hnadler(RemoveCategoryCommand command)
+        public async Task Handle(RemoveCategoryCommand command)
         {
             var value = await _context.Categories.FindAsync(command.CategoryId);
             _context.Categories.Remove(value);

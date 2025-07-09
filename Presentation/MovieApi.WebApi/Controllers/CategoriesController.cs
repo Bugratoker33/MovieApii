@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Identity.Client;
 using MoviAppi.Application.Features.CQRSDesingPatern.Commands.CategoryCommand;
 using MoviAppi.Application.Features.CQRSDesingPatern.Handlers.CategoryHandlers;
+using MoviAppi.Application.Features.CQRSDesingPatern.Queries.CategoryQueries;
 
 namespace MovieApi.WebApi.Controllers
 {
@@ -30,12 +32,32 @@ namespace MovieApi.WebApi.Controllers
             var value = await _categoryQueryHandler.Handler();
             return Ok(value);
         }
-        //[HttpPost]
-        //public async Task<IActionResult> CreateCategory(CreateCategoryCommand command)
-        //{
-        //    await _createCategoryCommandHandler.Handle(command);
-        //    return Ok("Kategory eklendi ");
-        //}
+        [HttpPost]
+        public async Task<IActionResult> CreateCategory(CreteCategoryCommand command)
+        {
+            await _createCategoryCommandHandler.Handle(command);
+            return Ok("Kategory eklendi ");
+        }
 
+        [HttpDelete]
+        public async Task<IActionResult> DeleteCategory(int id)
+        {
+            await _removeCategoryCommandHandler.Handle(new RemoveCategoryCommand(id));
+            return Ok("silme başarılır");
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateCategory(UpdateCategoryCommand command)
+        {
+            await _updateCategoryCommandHnadler.Handler(command);
+            return Ok("Başarıyla günceleştiridli");
+
+        }
+        [HttpGet("GetCategory")]
+        public async Task<IActionResult> GetCategory(int id)
+        {
+            var value = await _categoryByIdQueryHandler.Handle(new GetCategoryByIdQuery(id));
+            return Ok(value);
+        }
     }
 }

@@ -9,6 +9,10 @@ namespace MoviAppi.Application.Features.CQRSDesingPatern.Queries.MovieQueries
     public class GetMovieByIdQuery
     {
         public int MovieId { get; set; }
-     
+
+        public GetMovieByIdQuery(int movieId)
+        {
+            MovieId = movieId;
+        }
     }
 }
