@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MoviAppi.Application.Features.MediatorDesingPatern.Result.TagResults
 {
-    public class GetTagByIdResult
+    public class GetTagByIdQueryResult
     {
         public int TagId { get; set; }
         public string Title { get; set; }

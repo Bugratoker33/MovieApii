@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using MoviAppi.Application.Features.MediatorDesingPatern.Result.TagResults;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace MoviAppi.Application.Features.MediatorDesingPatern.Queries.TagQueries
 {
-    public class GetTagByIdQueryResult:IRequest<GetTagByIdQueryResult>
+    public class GetTagByIdQuery:IRequest<GetTagByIdQueryResult>
     {
         public int TagId { get; set; }
 
-        public GetTagByIdQueryResult(int tagId)
+        public GetTagByIdQuery(int tagId)
         {
             TagId = tagId;
         }
