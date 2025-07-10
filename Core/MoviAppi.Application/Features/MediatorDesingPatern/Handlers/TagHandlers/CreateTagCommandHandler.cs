@@ -20,7 +20,7 @@ namespace MoviAppi.Application.Features.MediatorDesingPatern.Handlers.TagHandler
 
         public async Task Handle(CreateTagCommand request, CancellationToken cancellationToken)
         {
-            _context.Tags.Add(new MovieApi.Domain.Entities.Tag
+          await  _context.Tags.AddAsync(new MovieApi.Domain.Entities.Tag
             {
                 Title = request.Title,
             });

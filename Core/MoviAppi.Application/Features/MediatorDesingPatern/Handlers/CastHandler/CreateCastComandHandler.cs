@@ -23,7 +23,7 @@ namespace MoviAppi.Application.Features.MediatorDesingPatern.Handlers.CastHandle
 
         public async Task Handle(CreateCastCommand request, CancellationToken cancellationToken)
         {
-            _context.Casts.Add(new Cast
+            await _context.Casts.AddAsync(new Cast
             {
                 Biograpy = request.Biograpy,
                 ImageUrl = request.ImageUrl,
